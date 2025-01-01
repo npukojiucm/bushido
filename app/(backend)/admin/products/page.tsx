@@ -1,10 +1,11 @@
 import { JSX } from 'react';
+import { Table } from '@/components/back-components/Table/table';
 
 const ProductsPage = (): JSX.Element => {
   return (
-    <>
-      <h1>Привет</h1>
-    </>
+    <main>
+      <Table />
+    </main>
   );
 };
 
