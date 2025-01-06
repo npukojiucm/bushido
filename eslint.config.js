@@ -1,17 +1,41 @@
 import js from '@eslint/js';
-import prettier from 'eslint-config-prettier';
+import prettierConfig from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
+import parser from '@typescript-eslint/parser';
+import tsPlugin from '@typescript-eslint/eslint-plugin'; // Подключаем TypeScript плагин
 
 export default [
   {
-    ignores: ['node_modules', 'dist', '.next'], // Папки, которые нужно игнорировать
+    ignores: ['node_modules', 'dist', '.next', 'environment.d.ts', 'next.config.ts'], // Игнорируемые файлы и папки
   },
-  js.configs.recommended,
+  js.configs.recommended, // Рекомендованные настройки ESLint
   {
-    files: ['**/*.{js,jsx,ts,tsx}'], // Расширения файлов
-    rules: {
-      'prettier/prettier': 'error', // Интеграция Prettier
+    files: ['**/*.{ts,tsx}'], // Только TypeScript файлы
+    languageOptions: {
+      parser, // Подключаем TypeScript парсер
+      ecmaVersion: 'latest', // Поддержка последнего стандарта ECMAScript
+      sourceType: 'module', // Для использования модулей
+      globals: {
+        process: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
+        HTMLTableElement: 'readonly',
+        HTMLDivElement: 'readonly',
+        HTMLInputElement: 'readonly',
+        HTMLLabelElement: 'readonly',
+        HTMLFormElement: 'readonly',
+        HTMLSelectElement: 'readonly',
+        HTMLOptionElement: 'readonly',
+      },
     },
-    plugins: ['prettier'],
+    plugins: {
+      prettier: prettierPlugin,
+      '@typescript-eslint': tsPlugin, // Подключаем TypeScript плагин
+    },
+    rules: {
+      '@typescript-eslint/explicit-function-return-type': 'error', // Обязательное указание возвращаемого типа
+      'prettier/prettier': 'error', // Интеграция с Prettier
+    },
   },
-  prettier,
+  prettierConfig, // Отключаем конфликтующие правила
 ];

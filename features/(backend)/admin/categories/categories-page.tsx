@@ -13,8 +13,8 @@ export const CategoriesPage = async (): Promise<JSX.Element> => {
   ));
 
   return (
-    <main>
+    <>
       <Table>{rows}</Table>
-    </main>
+    </>
   );
 };
