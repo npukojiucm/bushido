@@ -13,7 +13,7 @@ export const SelectFormGroup = ({
   ...props
 }: SelectFromGroupProps): JSX.Element => {
   const options = dropdownItems.map((option) => (
-    <OptionComponent value={option.value} title={option.title} />
+    <OptionComponent key={option.value} value={option.value} title={option.title} />
   ));
 
   return (

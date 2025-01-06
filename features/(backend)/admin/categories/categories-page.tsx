@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 import { Table } from '@/components/back-components/Table/table';
 import { getAllCategories } from '@/libs/db/get-all-categories';
+import Link from 'next/link';
 
 export const CategoriesPage = async (): Promise<JSX.Element> => {
   const categories = await getAllCategories();
@@ -14,6 +15,7 @@ export const CategoriesPage = async (): Promise<JSX.Element> => {
 
   return (
     <>
+      <Link href={`/admin/categories/create`}>Создать</Link>
       <Table>{rows}</Table>
     </>
   );

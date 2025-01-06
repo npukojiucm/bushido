@@ -1,10 +1,7 @@
 import { JSX } from 'react';
 
 const DishesPage = (): JSX.Element => {
-  return (
-    <main>
-    </main>
-  );
+  return <main></main>;
 };
 
 export default DishesPage;

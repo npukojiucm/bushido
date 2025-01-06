@@ -9,7 +9,7 @@ export const SelectComponent = ({
   ...props
 }: SelectComponentProps): JSX.Element => {
   return (
-    <select id={id} name={name} value={value} size={1} {...props}>
+    <select id={id} name={name} defaultValue={value} size={1} {...props}>
       {children}
     </select>
   );

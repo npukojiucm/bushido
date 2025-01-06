@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 import parser from '@typescript-eslint/parser';
-import tsPlugin from '@typescript-eslint/eslint-plugin'; // Подключаем TypeScript плагин
+import tsPlugin from '@typescript-eslint/eslint-plugin';
 
 export default [
   {
@@ -16,9 +16,10 @@ export default [
       ecmaVersion: 'latest', // Поддержка последнего стандарта ECMAScript
       sourceType: 'module', // Для использования модулей
       globals: {
-        process: 'readonly',
-        window: 'readonly',
+        process: 'readonly', // Глобальные переменные Node.js
+        window: 'readonly',  // Глобальные переменные браузера
         document: 'readonly',
+        console: 'readonly', // Добавляем console
         HTMLTableElement: 'readonly',
         HTMLDivElement: 'readonly',
         HTMLInputElement: 'readonly',
