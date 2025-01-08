@@ -2,13 +2,9 @@ import { JSX } from 'react';
 import { FormComponent } from '@/components/back-components/Form/form-component';
 import { InputFormGroup } from '@/components/back-components/Form/input-form-group/input-form-group';
 import { SelectFormGroup } from '@/components/back-components/Form/select-form-group/select-form-group';
+import { dropDownItems } from '@/utils/table-utils';
 
 export const CreateCategoryPage = (): JSX.Element => {
-  const dropdownItems = [
-    { value: '1', title: 'Активна' },
-    { value: '0', title: 'Неактивна' },
-  ];
-
   return (
     <FormComponent>
       <InputFormGroup
@@ -23,7 +19,7 @@ export const CreateCategoryPage = (): JSX.Element => {
         labelTitle={'Статус категории'}
         selectName={'isActive'}
         selectValue={'0'}
-        dropdownItems={dropdownItems}
+        dropdownItems={dropDownItems}
       />
     </FormComponent>
   );

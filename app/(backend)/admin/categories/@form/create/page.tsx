@@ -1,4 +1,4 @@
-import { CreateCategoryPage } from '@/features/(backend)/admin/categories/@form/create/page';
+import { CreateCategoryPage } from '@/features/(backend)/admin/categories/@form/create/create-category-page';
 import { JSX } from 'react';
 
 const Page = (): JSX.Element => {
