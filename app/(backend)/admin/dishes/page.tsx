@@ -1,7 +1,8 @@
 import { JSX } from 'react';
+import { DishesPage } from '@/pages/backend/dishes/dishes-page';
 
-const DishesPage = (): JSX.Element => {
-  return <main></main>;
+const Page = (): JSX.Element => {
+  return <DishesPage />;
 };
 
-export default DishesPage;
+export default Page;

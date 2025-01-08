@@ -15,3 +15,7 @@ export interface Dish {
 export type DishCreateRequest = Omit<Dish, 'id' | 'created_at' | 'updated_at'>;
 
 export type DishUpdateRequest = Partial<Omit<Dish, 'created_at'>> & { id: number };
+
+export interface DishWithCategory extends Dish {
+  category_title: string | null;
+}

@@ -27,6 +27,7 @@ export default [
         HTMLFormElement: 'readonly',
         HTMLSelectElement: 'readonly',
         HTMLOptionElement: 'readonly',
+        HTMLTableRowElement: 'readonly',
       },
     },
     plugins: {
