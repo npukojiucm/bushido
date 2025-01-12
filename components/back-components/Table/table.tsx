@@ -1,17 +1,12 @@
 import { JSX } from 'react';
 import { TableProps } from '@/components/back-components/Table/table.props';
 
-export const Table = ({ children }: TableProps): JSX.Element => {
+export const Table = ({ headRows, bodyRows }: TableProps): JSX.Element => {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>№</th>
-          <th>Название</th>
-        </tr>
-      </thead>
+      <thead>{headRows}</thead>
 
-      <tbody>{children}</tbody>
+      <tbody>{bodyRows}</tbody>
     </table>
   );
 };
