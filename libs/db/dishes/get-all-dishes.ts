@@ -1,6 +1,6 @@
 import { QueryResult } from 'pg';
 import { DishWithCategory } from '@/types';
-import { pool } from '@/libs/db/db';
+import { pool } from '@/libs/db/connect';
 
 export const getAllDishes = async (): Promise<DishWithCategory[]> => {
   try {

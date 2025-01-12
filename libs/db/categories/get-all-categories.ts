@@ -1,4 +1,4 @@
-import { pool } from '@/libs/db/db';
+import { pool } from '@/libs/db/connect';
 import { QueryResult } from 'pg';
 import { Category } from '@/types';
 
