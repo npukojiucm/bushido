@@ -1,6 +1,6 @@
-import { TableHeader } from '@/types';
+import { Category, DropDownItemStatus, TableHeaders } from '@/types';
 
-export const headerRows: Record<'categories' | 'dishes', TableHeader> = {
+export const headerRows: Record<'categories' | 'dishes', TableHeaders> = {
   categories: ['ID', 'Наименование', 'Статус'],
   dishes: [
     'ID',
@@ -15,7 +15,11 @@ export const headerRows: Record<'categories' | 'dishes', TableHeader> = {
   ],
 };
 
-export const dropDownItemsStatus = [
-  { value: '1', title: 'Активна' },
-  { value: '0', title: 'Неактивна' },
+export const dropDownItemsStatus: DropDownItemStatus[] = [
+  { value: '1', title: 'Активный' },
+  { value: '0', title: 'Неактивный' },
 ];
+
+export const isCategory = (item: DropDownItemStatus | Partial<Category>): item is Category => {
+  return 'id' in item && 'title' in item;
+};
