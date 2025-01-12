@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { Table } from '@/components/back-components/Table/table';
-import { getAllCategories } from '@/libs/db/get-all-categories';
+import { getAllCategories } from '@/libs/db/categories/get-all-categories';
 import Link from 'next/link';
 
 export const CategoriesPage = async (): Promise<JSX.Element> => {

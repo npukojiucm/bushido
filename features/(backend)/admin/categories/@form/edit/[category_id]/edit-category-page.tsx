@@ -2,7 +2,7 @@ import { EditCategoryPageProps } from '@/features/(backend)/admin/categories/@fo
 import { JSX } from 'react';
 import { FormComponent } from '@/components/back-components/Form/form-component';
 import { InputFormGroup } from '@/components/back-components/Form/input-form-group/input-form-group';
-import { getCategoryById } from '@/libs/db/get-category-by-id';
+import { getCategoryById } from '@/libs/db/categories/get-category-by-id';
 import { InputComponent } from '@/components/back-components/Form/input/input-component';
 import { SelectFormGroup } from '@/components/back-components/Form/select-form-group/select-form-group';
 import { dropDownItems } from '@/utils/table-utils';

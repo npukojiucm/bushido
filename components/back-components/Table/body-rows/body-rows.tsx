@@ -1,3 +1,5 @@
+'use client';
+
 import { JSX } from 'react';
 import { BodyRowsProps } from '@/components/back-components/Table/body-rows/body-rows.props';
 import { Category, DishWithCategory } from '@/types';

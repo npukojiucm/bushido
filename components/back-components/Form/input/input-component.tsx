@@ -6,10 +6,7 @@ export const InputComponent = ({
   id,
   name,
   defaultValue,
-  value,
   ...props
 }: InputComponentProps): JSX.Element => {
-  return (
-    <input type={type} id={id} name={name} defaultValue={defaultValue} value={value} {...props} />
-  );
+  return <input type={type} id={id} name={name} defaultValue={defaultValue} {...props} />;
 };

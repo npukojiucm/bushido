@@ -6,5 +6,4 @@ export interface InputComponentProps
   id: string;
   name: string;
   defaultValue?: string;
-  value?: string;
 }

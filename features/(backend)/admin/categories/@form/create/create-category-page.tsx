@@ -2,7 +2,7 @@ import { JSX } from 'react';
 import { FormComponent } from '@/components/back-components/Form/form-component';
 import { InputFormGroup } from '@/components/back-components/Form/input-form-group/input-form-group';
 import { SelectFormGroup } from '@/components/back-components/Form/select-form-group/select-form-group';
-import { dropDownItems } from '@/utils/table-utils';
+import { dropDownItemsStatus } from '@/utils/table-utils';
 
 export const CreateCategoryPage = (): JSX.Element => {
   return (
@@ -19,7 +19,7 @@ export const CreateCategoryPage = (): JSX.Element => {
         labelTitle={'Статус категории'}
         selectName={'isActive'}
         selectValue={'0'}
-        dropdownItems={dropDownItems}
+        dropdownItems={dropDownItemsStatus}
       />
     </FormComponent>
   );

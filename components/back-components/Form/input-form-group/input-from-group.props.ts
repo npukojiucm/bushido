@@ -4,7 +4,7 @@ export interface InputFromGroupProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   id: string;
   labelTitle: string;
-  inputType: string;
+  inputType: 'text' | 'number' | 'hidden';
   inputName: string;
-  inputDefaultValue?: string;
+  inputDefaultValue?: string | number;
 }
