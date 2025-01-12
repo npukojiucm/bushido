@@ -1,11 +1,11 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { OptionComponentProps } from '@/components/back-components/Form/option/option-component.props';
+import { Category, DropDownItemStatus } from '@/types';
 
-export interface SelectFromGroupProps
+export interface SelectFromGroupProps<T extends DropDownItemStatus | Category>
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   id: string;
   labelTitle: string;
-  selectName: string;
-  selectValue: string;
-  dropdownItems: OptionComponentProps[];
+  defaultSelectValue: string;
+  dropdownItems: T[];
+  [key: string]: any;
 }

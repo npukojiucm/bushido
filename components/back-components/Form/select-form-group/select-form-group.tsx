@@ -1,25 +1,31 @@
 import { JSX } from 'react';
 import { SelectFromGroupProps } from '@/components/back-components/Form/select-form-group/select-from-group.props';
-import { LabelComponent } from '@/components/back-components/Form/label/label-component';
-import { SelectComponent } from '@/components/back-components/Form/select/select-component';
 import { OptionComponent } from '@/components/back-components/Form/option/option-component';
+import { Category, DropDownItemStatus } from '@/types';
+import { isCategory } from '@/utils/table-utils';
 
-export const SelectFormGroup = ({
+export const SelectFormGroup = <T extends DropDownItemStatus | Category>({
   id,
   labelTitle,
-  selectName,
-  selectValue,
+  defaultSelectValue,
   dropdownItems,
   ...props
-}: SelectFromGroupProps): JSX.Element => {
-  const options = dropdownItems.map((option) => (
-    <OptionComponent key={option.value} value={option.value} title={option.title} />
-  ));
-
+}: SelectFromGroupProps<T>): JSX.Element => {
   return (
     <div {...props}>
-      <LabelComponent id={id} title={labelTitle} />
-      <SelectComponent id={id} name={selectName} value={selectValue} children={options} />
+      <label htmlFor={id}>{labelTitle}</label>
+
+      <select defaultValue={defaultSelectValue}>
+        {isCategory(dropdownItems[0]) && <option value={''}>Выберите категорию:</option>}
+
+        {dropdownItems.map((option) => (
+          <OptionComponent
+            key={isCategory(option) ? String(option.id) : option.value}
+            value={isCategory(option) ? String(option.id) : option.value}
+            title={option.title}
+          />
+        ))}
+      </select>
     </div>
   );
 };
