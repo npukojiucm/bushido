@@ -1,0 +1,44 @@
+@use "../base/_variables" as *;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $color-text-primary;
+
+  th {
+    background-color: $color-background-header;
+    color: $color-text-primary;
+    text-align: left;
+    padding: $padding-cell;
+    border-bottom: 2px solid $color-border;
+  }
+
+  td {
+    background-color: $color-background-cell;
+    padding: $padding-cell;
+    border-bottom: 1px solid $color-border;
+    text-align: left;
+  }
+
+  tr:nth-child(even) td {
+    background-color: $color-background-row-alt;
+  }
+
+  tr:hover td {
+    background-color: $color-background-hover;
+    cursor: pointer;
+  }
+
+  tr.inactive td {
+    background-color: $color-background-inactive;
+    color: $color-text-inactive;
+
+    &:hover {
+      background-color: $color-background-inactive-hover;
+      color: $color-text-hover;
+    }
+  }
+}
+

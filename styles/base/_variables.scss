@@ -1,0 +1,25 @@
+// Основные цвета
+$color-text-primary: #333333;      // Основной цвет текста
+$color-text-inactive: #999999;    // Цвет текста неактивных строк
+$color-text-hover: #666666;       // Цвет текста при наведении на неактивную строку
+
+// Фоновые цвета
+$color-background-header: #F5F5F5;       // Фон заголовка
+$color-background-cell: #FFFFFF;         // Фон активной строки
+$color-background-row-alt: #FAFAFA;      // Фон для зебры (чётные строки)
+$color-background-hover: #E8F4FF;        // Фон строки при наведении (чуть насыщеннее)
+$color-background-inactive: #E0E0E0;     // Фон неактивной строки (тёмнее для большего контраста)
+$color-background-inactive-hover: #D6D6D6; // Фон неактивной строки при наведении
+
+
+
+// Границы
+$color-border: #DADADA;             // Цвет границ ячеек
+
+// Отступы и размеры
+$padding-cell: 10px;               // Внутренний отступ ячеек
+$font-family: 'Roboto', 'Arial', sans-serif;   // Основной шрифт
+$font-family-heading: 'Inter', 'Helvetica Neue', sans-serif;  // Шрифт для заголовков
+$font-size: 14px;                  // Размер шрифта
+
+

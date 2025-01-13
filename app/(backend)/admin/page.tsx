@@ -1,4 +1,5 @@
 import { JSX } from 'react';
+import '../../../styles/global.scss';
 
 const Page = (): JSX.Element => {
   return (
