@@ -1,0 +1,54 @@
+@use '../base/variables' as *;
+@use "sass:color";
+
+select {
+  width: 100%; // Занимает всю ширину контейнера
+  padding: 0.5em 0.75em; // Внутренние отступы
+  font-family: $font-family; // Основной шрифт
+  font-size: 1em; // Размер шрифта (16px)
+  line-height: 1.5; // Высота строки
+  color: $color-text-primary; // Основной цвет текста
+  background-color: #fff; // Цвет фона
+  border: 0.0625em solid $color-border; // Граница (1px)
+  border-radius: 0.25em; // Радиус скругления (4px)
+  appearance: auto; // Включаем стандартные стрелки браузера
+  cursor: pointer; // Указатель на выбор
+  transition: border-color 0.3s, box-shadow 0.3s; // Плавные переходы
+
+  &:hover {
+    border-color: color.adjust($color-border, $lightness: 10%); // Изменение цвета границы при наведении
+  }
+
+  &:focus {
+    outline: none; // Убираем стандартное выделение
+    border-color: color.adjust($color-border, $lightness: 20%); // Цвет границы при фокусе
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1); // Лёгкое свечение
+  }
+
+  &:disabled {
+    background-color: color.adjust($color-border,$lightness: 30%); // Светлый фон для отключенного состояния
+    color: $color-text-secondary; // Цвет текста для отключенного состояния
+    border-color: $color-border; // Граница для disabled
+    cursor: not-allowed; // Изменение курсора
+  }
+}
+
+// Стили для option
+option {
+  font-family: $font-family; // Основной шрифт
+  font-size: 1em; // Размер шрифта (16px)
+  line-height: 1.5; // Высота строки
+  color: $color-text-primary; // Цвет текста
+  background-color: #fff; // Фон элемента
+  padding: 0.5em 0.75em; // Внутренние отступы
+  cursor: pointer; // Указатель на выбор
+
+  &:hover {
+    background-color: color.adjust($color-background, $lightness: 10%); // Изменение фона при наведении
+  }
+
+  &:disabled {
+    color: $color-text-secondary; // Цвет текста для отключенного состояния
+    background-color: color.adjust($color-border, $lightness: 20%); // Светлый фон
+  }
+}

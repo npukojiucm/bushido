@@ -1,0 +1,28 @@
+@use '../base/variables' as *;
+@use "sass:color";
+
+input,
+textarea {
+  width: 100%;
+  padding: 1em; // Используем em для отступов
+  border: 0.0625em solid $color-border; // Граница (1px)
+  border-radius: 0.25em; // Радиус скругления (4px)
+  font-family: $font-family;
+  font-size: 1em; // Размер шрифта (16px)
+  color: $color-text-primary;
+
+  &:focus {
+    outline: none;
+    border-color: color.adjust($color-border, $lightness: 10%);
+  }
+}
+
+input[type='number'] {
+  appearance: textfield; // Убираем стрелки у input type=number
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none; // Убираем стрелки в WebKit
+    margin: 0;
+  }
+}

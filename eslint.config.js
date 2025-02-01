@@ -20,6 +20,8 @@ export default [
         window: 'readonly',  // Глобальные переменные браузера
         document: 'readonly',
         console: 'readonly', // Добавляем console
+        File: 'readonly', // Добавляем глобальную переменную File
+        Buffer: 'readonly', // Добавляем глобальную переменную Buffer
         HTMLTableElement: 'readonly',
         HTMLDivElement: 'readonly',
         HTMLInputElement: 'readonly',
@@ -28,6 +30,9 @@ export default [
         HTMLSelectElement: 'readonly',
         HTMLOptionElement: 'readonly',
         HTMLTableRowElement: 'readonly',
+        HTMLDialogElement: 'readonly',
+        HTMLButtonElement: 'readonly',
+        FormData: 'readonly',
       },
     },
     plugins: {

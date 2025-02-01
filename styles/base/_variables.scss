@@ -1,5 +1,27 @@
-// Основные цвета
+// Переменные шрифтов
+$font-family: 'Roboto', 'Arial', sans-serif; // Основной шрифт
+$font-family-heading: 'Inter', 'Helvetica Neue', sans-serif; // Шрифт для заголовков
+
+// Цветовая палитра
 $color-text-primary: #333333;      // Основной цвет текста
+$color-text-secondary: #666666;    // Вторичный текст
+$color-background: #f4f4f4;        // Фоновый цвет страницы
+$color-border: #e0e0e0;            // Цвет границ
+
+// Отступы и размеры
+$base-padding: 16px;               // Базовые отступы
+$base-margin: 16px;                // Базовый отступ
+$base-border-radius: 4px;          // Базовый радиус скругления
+
+// Шрифты
+$font-size-base: 16px;             // Основной размер текста
+$font-size-heading: 24px;          // Размер заголовков
+$line-height: 1.5;                 // Высота строки
+
+
+
+
+// Основные цвета
 $color-text-inactive: #999999;    // Цвет текста неактивных строк
 $color-text-hover: #666666;       // Цвет текста при наведении на неактивную строку
 
@@ -18,8 +40,6 @@ $color-border: #DADADA;             // Цвет границ ячеек
 
 // Отступы и размеры
 $padding-cell: 10px;               // Внутренний отступ ячеек
-$font-family: 'Roboto', 'Arial', sans-serif;   // Основной шрифт
-$font-family-heading: 'Inter', 'Helvetica Neue', sans-serif;  // Шрифт для заголовков
 $font-size: 14px;                  // Размер шрифта
 
 
