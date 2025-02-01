@@ -1,8 +1,24 @@
 import { JSX } from 'react';
-import { CategoriesPage } from '@/features/(backend)/admin/categories/categories-page';
+import { getAllCategories } from '@/libs/db/categories';
+import { Table } from '@/components/back-components/Table/table';
+import { HeaderRows } from '@/components/back-components/Table/header-rows/header-rows';
+import { BodyRows } from '@/components/back-components/Table/body-rows/body-rows';
+import { Category } from '@/types';
+import { Button } from '@/components/back-components/Button/button';
 
-const Page = (): JSX.Element => {
-  return <CategoriesPage />;
+const CategoriesPage = async (): Promise<JSX.Element> => {
+  const categories = await getAllCategories();
+
+  return (
+    <>
+      <Button type={'button'} title={'Добавить'} action={'create'} />
+
+      <Table
+        headRows={<HeaderRows type={'categories'} />}
+        bodyRows={<BodyRows<Category> rowItems={categories} />}
+      />
+    </>
+  );
 };
 
-export default Page;
+export default CategoriesPage;

@@ -1,9 +1,19 @@
-import { CategoriesLayout } from '@/features/(backend)/admin/categories/layout';
-import { CategoriesLayoutProps } from '@/features/(backend)/admin/categories/layout.props';
-import { JSX } from 'react';
+import { JSX, ReactNode } from 'react';
 
-const Layout = ({ children, form }: CategoriesLayoutProps): JSX.Element => {
-  return <CategoriesLayout children={children} form={form} />;
+const CategoriesLayout = ({
+  children,
+  modal,
+}: {
+  children: ReactNode;
+  modal: ReactNode;
+}): JSX.Element => {
+  return (
+    <>
+      {children}
+      {modal}
+      <div id="modal-root" />
+    </>
+  );
 };
 
-export default Layout;
+export default CategoriesLayout;

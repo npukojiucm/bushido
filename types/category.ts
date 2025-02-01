@@ -6,6 +6,8 @@ export interface Category {
   updated_at: Date;
 }
 
+export type CategoryFormData = Pick<Category, 'title' | 'is_active'>;
+
 export type CategoryCreateRequest = Omit<
   Category,
   'id' | 'created_at' | 'updated_at' | 'is_active'

@@ -4,14 +4,7 @@ import { getAllCategories } from '@/libs/db/categories/get-all-categories';
 import Link from 'next/link';
 
 export const CategoriesPage = async (): Promise<JSX.Element> => {
-  const categories = await getAllCategories();
 
-  const rows = categories.map((category) => (
-    <tr key={category.id}>
-      <td>{category.id}</td>
-      <td>{category.title}</td>
-    </tr>
-  ));
 
   return (
     <>
