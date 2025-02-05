@@ -9,7 +9,7 @@ export const CategoriesPage = async (): Promise<JSX.Element> => {
   return (
     <>
       <Link href={`/admin/categories/create`}>Создать</Link>
-      <Link href={`/admin/categories/edit/1`}>Редактировать</Link>
+      <Link href={`/admin/categories/(.)edit/1`}>Редактировать</Link>
 
       <Table>{rows}</Table>
     </>
