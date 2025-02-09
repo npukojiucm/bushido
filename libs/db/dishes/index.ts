@@ -1,2 +1,2 @@
 export { getAllDishes } from './get-all-dishes';
-export { getDishById } from './get-dish-by-id';
+export { getDishById } from './select-dish-by-id';

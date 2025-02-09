@@ -1,22 +1,20 @@
 'use server';
 
-import { CategoryFormData } from '@/types';
-import { parseFormData, transformCategory } from '@/utils/form/form-data/parse-form-data';
+import { CategoryFormData, CreateOrUpdateCategory } from '@/types';
+import { parseFormData } from '@/utils/form/form-data/parse-form-data';
 import { createCategory } from '@/libs/db/categories';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 
 export const createCategoryAction = async (formData: FormData): Promise<void> => {
-  const category = parseFormData<CategoryFormData>(formData, transformCategory);
+  const data = parseFormData<CategoryFormData>(formData);
 
-  const response = await createCategory(category);
+  const category: CreateOrUpdateCategory = {
+    title: data.title,
+    is_active: data.is_active === '0' ? 0 : 1,
+  };
 
-  if (!response.success && response.error) {
-    console.error(response.error);
-    return;
-  }
-
+  await createCategory(category);
   revalidatePath('/admin/categories');
-
   redirect('/admin/categories');
 };

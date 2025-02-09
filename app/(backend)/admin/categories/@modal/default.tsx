@@ -1,5 +1,5 @@
-const ModalCategoriesDefault = (): null => {
+const ModalCategoriesDefaultPage = (): null => {
   return null;
 };
 
-export default ModalCategoriesDefault;
+export default ModalCategoriesDefaultPage;

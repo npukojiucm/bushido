@@ -1,17 +1,20 @@
 import { JSX } from 'react';
-import { FormComponent } from '@/components/back-components/Form/form-component';
 import { InputFormGroup } from '@/components/back-components/Form/input-form-group/input-form-group';
 import { DishFormProps } from '@/components/back-components/DishForm/dish-form.props';
-import Image from 'next/image';
 import { SelectFormGroup } from '@/components/back-components/Form/select-form-group/select-form-group';
+import Form from 'next/form';
+import { dropDownItemsStatus } from '@/utils/table-utils';
+import { Button } from '@/components/back-components/Button/button';
+import { PickedImage } from '@/components/back-components/PickedImage/picked-image';
 
-export const DishForm = ({ dish, categories, ...props }: DishFormProps): JSX.Element => {
+export const DishForm = ({
+  dish,
+  categories,
+  formAction,
+  ...props
+}: DishFormProps): JSX.Element => {
   return (
-    <FormComponent {...props}>
-      {dish?.id && (
-        <input type={'hidden'} id={'dish_id'} name={'dish_id'} defaultValue={String(dish.id)} />
-      )}
-
+    <Form action={formAction} {...props}>
       <InputFormGroup
         id={'title'}
         labelTitle={'Наименование'}
@@ -20,12 +23,7 @@ export const DishForm = ({ dish, categories, ...props }: DishFormProps): JSX.Ele
         inputDefaultValue={dish?.title}
       />
 
-      <Image
-        src={'/assets/1'}
-        alt={dish?.title || 'Изображение отсутствует'}
-        width={300}
-        height={300}
-      />
+      <PickedImage />
 
       <InputFormGroup
         id={'price'}
@@ -54,9 +52,21 @@ export const DishForm = ({ dish, categories, ...props }: DishFormProps): JSX.Ele
       <SelectFormGroup
         id={'category_id'}
         labelTitle={'Категория'}
+        selectName={'category_id'}
         defaultSelectValue={String(dish?.category_id)}
         dropdownItems={categories}
       />
-    </FormComponent>
+
+      <SelectFormGroup
+        id={'is_active'}
+        labelTitle={'Статус блюда'}
+        selectName={'is_active'}
+        defaultSelectValue={String(dish?.is_active)}
+        dropdownItems={dropDownItemsStatus}
+      />
+
+      <Button type={'submit'} title={'Сохранить'} />
+      <Button type={'button'} title={'Отмена'} />
+    </Form>
   );
 };

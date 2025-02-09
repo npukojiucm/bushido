@@ -14,7 +14,7 @@ export const SelectFormGroup = <T extends DropDownItemStatus | Category>({
   return (
     <div {...props}>
       <label htmlFor={id}>{labelTitle}</label>
-      <select name={selectName} defaultValue={defaultSelectValue}>
+      <select id={id} name={selectName} defaultValue={defaultSelectValue}>
         {isCategory(dropdownItems[0]) && <option value={''}>Выберите категорию:</option>}
 
         {dropdownItems.map((option) => (

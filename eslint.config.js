@@ -33,6 +33,7 @@ export default [
         HTMLDialogElement: 'readonly',
         HTMLButtonElement: 'readonly',
         FormData: 'readonly',
+        FileReader: 'readonly',
       },
     },
     plugins: {

@@ -6,13 +6,15 @@ export interface Category {
   updated_at: Date;
 }
 
-export type CategoryFormData = Pick<Category, 'title' | 'is_active'>;
+interface BaseCategory {
+  title: string;
+  is_active: 0 | 1;
+}
 
-export type CategoryCreateRequest = Omit<
-  Category,
-  'id' | 'created_at' | 'updated_at' | 'is_active'
-> & {
-  is_active?: 0 | 1;
-};
+export type CategoryFormData = {
+  is_active: string;
+} & Omit<BaseCategory, 'is_active'>;
 
-export type CategoryUpdateRequest = Partial<Omit<Category, 'id' | 'created_at'>> & { id: number };
+export type CreateOrUpdateCategory = {
+  id?: number;
+} & BaseCategory;

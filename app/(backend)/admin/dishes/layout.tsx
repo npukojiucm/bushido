@@ -1,16 +1,12 @@
 import { JSX, ReactNode } from 'react';
 
-const Layout = ({
-  children,
-  dishModal,
-}: {
-  children: ReactNode;
-  dishModal: ReactNode;
-}): JSX.Element => {
+const Layout = ({ children, modal }: { children: ReactNode; modal: ReactNode }): JSX.Element => {
   return (
-    <main>
-      {children} {dishModal}{' '}
-    </main>
+    <>
+      {children}
+      {modal}
+      <div id="modal-root" />
+    </>
   );
 };
 

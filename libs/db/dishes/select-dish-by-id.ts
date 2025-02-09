@@ -2,7 +2,7 @@ import { QueryResult } from 'pg';
 import { DishWithCategory } from '@/types';
 import { pool } from '@/libs/db/connect';
 
-export const getDishById = async (id: number): Promise<DishWithCategory> => {
+export const selectDishById = async (id: number): Promise<DishWithCategory> => {
   try {
     const queryResult: QueryResult<DishWithCategory> = await pool.query(
       `
